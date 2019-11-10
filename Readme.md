@@ -1,6 +1,6 @@
 # RestaurantDetailAPI
 
-Creating a Restaurant API to fetch the date as per the the request given below:
+Creating a Restaurant API to fetch the data as per the the request given below:
 
 - Restaurant wise sales for a given restaurant
 - Availability of food item with sold quantity detail.
@@ -30,7 +30,6 @@ Creating a Restaurant API to fetch the date as per the the request given below:
 
 ```
 $ git clone https://github.com/shankarj67/Django-RESTAPI.git
-$ cd src
 $ pip install -r requirements.txt
 $ python manage.py makemigrations 
 $ python manage.py migrate
@@ -55,17 +54,20 @@ Login with your superuser account to view all the API because of the authenticat
 All the results are in JSON format which can be easily consumed by any of the frontend framework.
 
 
-Use case 1:
+## Use case 1:
 
 Total sales for Kanti-sagar restaurant and MTR
 
 Url Endpoint: http://127.0.0.1:8000/api/v1/totalsales/?slug=kanti-sagar&order_timestamp_date=2019-10-2
 
 Screenshot:
+
 ![alt text](screenshots/sales_kanti.png)
+
+
 ![alt text](screenshots/sales_mtr.png)
 
-Use Case 2:
+## Use Case 2:
 
 Checking if food item is available againist the current timing of the query and if item is available then calculate how many items are sold.
 
@@ -74,22 +76,25 @@ Url Endpoint: http://127.0.0.1:8000/api/v1/foodavailable/?food=vada&order_timest
 Current timing is 1:00AM and item is not available at that time
 
 ![alt text](screenshots/vada.png)
+
 ![alt text](screenshots/pongal.png)
 
-Use Case 3:
+## Use Case 3:
 
 Calculate the top trending item for the provided restaurant
 
 Url Endpoint: http://127.0.0.1:8000/api/v1/trendingfood/?slug=tuckshop&order_timestamp_date=2019-10-2
 
 ![alt text](screenshots/trending_truckshop.png)
+
 ![alt text](screenshots/trending_kantisagar.png)
 
-Use case 4:
+## Use case 4:
 
 Dump the csv file of a given restaurant by date.
 
 Url Endpoint: http://127.0.0.1:8000/api/v1/dump/?slug=kanti-sagar&order_timestamp_date=2019-10-2
+
 
 ![alt text](screenshots/pdf.png)
 
