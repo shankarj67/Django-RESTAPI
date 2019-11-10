@@ -1,14 +1,19 @@
-FROM python:3.7-alpine
-MAINTAINER Shankar
+# Dockerfile
 
+# Pull base image
+FROM python:3.7
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-COPY ./requirements.txt /requirements.txt
-RUN pip install -r ./requirements.txt
+# Set work directory
+WORKDIR /code
 
-RUN mkdir /app
-WORKDIR /app
-COPY ./app /app
+# Install dependencies
+copy requirements.txt /code/
+RUN pip install -r requirements.txt
 
-RUN adduser -D user
-USER user
+
+# Copy project
+COPY . /code/

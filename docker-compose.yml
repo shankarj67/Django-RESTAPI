@@ -1,12 +1,19 @@
-version: "3"
+version: '3.7'
 
 services:
-  app:
-    build:
-      context: .
-    ports: 
-      - "8000:8000"
+  db:
+    image: postgres:10.1-alpine
     volumes:
-      - ./app:/app
-    command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"      
+      - postgres_data:/var/lib/postgresql/data/
+  web:
+    build: .
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
