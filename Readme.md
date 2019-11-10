@@ -53,6 +53,11 @@ $ docker-compose up
 Login with your superuser account to view all the API because of the authenticated implemented.
 All the results are in JSON format which can be easily consumed by any of the frontend framework.
 
+Here is the screenshot of the list view which will show the details of all the restaurants.
+
+![alt text](screenshots/detail.png)
+
+
 
 ## Use case 1:
 
@@ -75,6 +80,8 @@ Url Endpoint: http://127.0.0.1:8000/api/v1/foodavailable/?food=vada&order_timest
 
 Current timing is 1:00AM and item is not available at that time
 
+Screenshot:
+
 ![alt text](screenshots/vada.png)
 
 ![alt text](screenshots/pongal.png)
@@ -84,6 +91,8 @@ Current timing is 1:00AM and item is not available at that time
 Calculate the top trending item for the provided restaurant
 
 Url Endpoint: http://127.0.0.1:8000/api/v1/trendingfood/?slug=tuckshop&order_timestamp_date=2019-10-2
+
+Screenshot:
 
 ![alt text](screenshots/trending_truckshop.png)
 
@@ -95,6 +104,7 @@ Dump the csv file of a given restaurant by date.
 
 Url Endpoint: http://127.0.0.1:8000/api/v1/dump/?slug=kanti-sagar&order_timestamp_date=2019-10-2
 
+Screenshot:
 
 ![alt text](screenshots/pdf.png)
 
